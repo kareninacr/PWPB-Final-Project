@@ -23,7 +23,7 @@ import retrofit2.Response;
 public class TambahKelas extends AppCompatActivity {
     Call<ResponseBody> call;
     BaseApiService mApiService;
-    public static String token = null;
+    private String token = null;
     EditText etKelas, etKompetensi;
     Button btnSimpan, btnLihat;
 
