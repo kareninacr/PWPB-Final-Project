@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Pay 4</string>
+    <string name="title_activity">Login</string>
+    <string name="user">Username</string>
+    <string name="pass">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Gagal Masuk"</string>
+
+    <string name="admin">Beranda Admin</string>
+    <string name="petugas">Beranda Petugas</string>
+    <string name="siswa">Beranda Siswa</string>
+    <string name="input">Input Data</string>
+    <string name="data">Lihat Data</string>
+    <string name="trans">Transaksi</string>
+    <string name="riwayat">Riwayat</string>
+    <string name="lap">Laporan</string>
+    <string name="nisn">NISN</string>
+    <string name="nis">NIS</string>
+    <string name="nama">Nama</string>
+    <string name="lvl">Level</string>
+    <string name="kls">Kelas</string>
+    <string name="alm">Alamat</string>
+    <string name="tlp">Telepon</string>
+    <string name="nkls">Nama Kelas</string>
+    <string name="komp">Kompetensi Keahlian</string>
+    <string name="thn">Tahun Ajaran</string>
+    <string name="nom">Nominal</string>
+    <string name="tgl">Tanggal Pembayaran</string>
+    <string name="bln">Jumlah</string>
+    <string name="ket">Keterangan</string>
+    <string name="jlh">Total Pembayaran</string>
+    <string name="idp">Id Petugas</string>
+    <string name="ids">Id Spp</string>
+    <string name="btl">Batal</string>
+    <string name="smp">Simpan</string>
+    <string name="sub">Pembayaran Spp</string>
+
+    <string name="idata">Input Data</string>
+    <string name="dpts">Data Petugas</string>
+    <string name="dssw">Data Siswa</string>
+    <string name="dkls">Data Kelas</string>
+    <string name="dspp">Data Spp</string>
+    <string name="detspp">Detail Data Spp</string>
+    <string name="dtran">Data Transaksi</string>
+    <string name="ssw">Siswa</string>
+    <string name="lssw">Lihat Siswa</string>
+    <string name="spp">SPP</string>
+    <string name="lspp">Lihat SPP</string>
+    <string name="kelas">Kelas</string>
+    <string name="lkelas">Lihat Kelas</string>
+    <string name="pts">Petugas</string>
+    <string name="lpts">Lihat Petugas</string>
+    <string name="title_notifications">Notifikasi</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_home">Home</string>
+    <string name="tmb">Tambah</string>
+    <string name="edt">Edit</string>
+    <string name="hps">Hapus</string>
+    <string name="lht">Lihat</string>
+    <string name="editkelas">Edit Data Kelas</string>
+    <string name="showdkls">Show Data Kelas</string>
+    <string name="no">No</string>
+    <string name="Nomor">Nomor</string>
+    <string name="editPetugas">Edit Data Petugas</string>
+    <string name="showdpetugas">Detail Data Petugas</string>
+    <string name="editSiswa">Edit Data Siswa</string>
+    <string name="showdsiswa">Detail Data Siswa</string>
+
+
+</resources>

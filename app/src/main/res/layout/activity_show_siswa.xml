@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Toolbar
+        android:id="@+id/toolbar_show_kelas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bluepu"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="370dp"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/back_data_kelas"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:onClick="onClick"
+                android:background="@drawable/ic_arrow_back_white"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/back_data_kelas"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/showdsiswa"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="7dp" />
+        </RelativeLayout>
+    </Toolbar>
+
+    <TextView
+        android:id="@+id/tvNISN_show"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="NISN : 17181171111"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_show_kelas"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:id="@+id/tvNIS_show"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="NIS : 1718117123"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvNISN_show"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/tvNama_show"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="Nama : Annonymous"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvNIS_show"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/tvKelas_show"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="Kelas : XII Multiplayer"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvNama_show"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/tvAlamat_show"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="Alamat : Jl. MMORPG No 1"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvKelas_show"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/tvTelp_show"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="Telp : +628964123321"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvAlamat_show"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/tvIDSpp_show"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="ID SPP : 1023"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTelp_show"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

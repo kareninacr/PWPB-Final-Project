@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.pwpbfinalproject">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Transaksi.TambahTransaksi"></activity>
+        <activity android:name=".Transaksi.DataTransaksi" />
+        <activity android:name=".Admin.AdminInput" />
+        <activity android:name=".Admin.HomeAdmin" />
+        <activity android:name=".DataSPP.ShowSPP" />
+        <activity android:name=".DataSiswa.ShowSiswa" />
+        <activity android:name=".DataPetugas.ShowPetugas" />
+        <activity android:name=".DataKelas.ShowKelas" />
+        <activity android:name=".DataSPP.EditSPP" />
+        <activity android:name=".DataSiswa.EditSiswa" />
+        <activity android:name=".DataPetugas.EditPetugas" />
+        <activity android:name=".DataKelas.EditKelas" />
+        <activity android:name=".DataSPP.TambahSPP" />
+        <activity android:name=".DataSiswa.TambahSiswa" />
+        <activity android:name=".DataPetugas.TambahPetugas" />
+        <activity android:name=".DataKelas.TambahKelas" />
+        <activity android:name=".DataSPP.DataSPP" />
+        <activity android:name=".DataSiswa.DataSiswa" />
+        <activity android:name=".DataPetugas.DataPetugas" />
+        <activity android:name=".DataKelas.DataKelas" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

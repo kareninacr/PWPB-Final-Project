@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSiswa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvNis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NIS : 1718117104 "
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/tvNama"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:text="Nama : Natasha "
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/tvNis"
+                android:layout_marginBottom="15dp"/>
+
+            <ImageButton
+                android:id="@+id/btnHapus"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/delete"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="25dp"/>
+
+            <ImageButton
+                android:id="@+id/btnEdit"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/edit"
+                android:layout_toLeftOf="@id/btnHapus"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="25dp"/>
+
+            <ImageButton
+                android:id="@+id/btnLihat"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_search"
+                android:layout_toLeftOf="@id/btnEdit"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="25dp"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
