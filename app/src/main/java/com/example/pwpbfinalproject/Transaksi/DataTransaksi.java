@@ -41,12 +41,7 @@ public class DataTransaksi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_transaksi);
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
+        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         initComponents();
     }
 
@@ -57,7 +52,6 @@ public class DataTransaksi extends AppCompatActivity {
         if (rvTransaksi != null) {
             rvTransaksi.setHasFixedSize(true);
         }
-        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         requestData();
     }
 
@@ -72,11 +66,6 @@ public class DataTransaksi extends AppCompatActivity {
                     if (response.isSuccessful()) {
 
                         JSONObject jsonRESULTS = new JSONObject(response.body().string());
-                        Log.d("Array :", response.body().toString());
-                        TextView tanggal = (TextView) findViewById(R.id.tvTanggal);
-                        TextView siswa = (TextView) findViewById(R.id.tvSiswa);
-                        TextView bayar = (TextView) findViewById(R.id.tvJumlah);
-
                         ArrayList<Transaksi> transaksiArrayList = new ArrayList<>();
                         JSONArray dataArray = jsonRESULTS.getJSONArray("data");
 

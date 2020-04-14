@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.pwpbfinalproject.LoginActivity;
 import com.example.pwpbfinalproject.R;
 import com.example.pwpbfinalproject.Retrofit.BaseApiService;
+import com.example.pwpbfinalproject.Retrofit.RetrofitClient;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -30,6 +31,7 @@ public class TambahKelas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_kelas);
+        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         initComponents();
     }
 
@@ -56,10 +58,10 @@ public class TambahKelas extends AppCompatActivity {
 
     private void tambahData() {
         final String kelas = etKelas.getText().toString();
-        Log.d("Kelas", kelas);
         String type = "application/json";
         this.token = LoginActivity.token;
-        call = mApiService.addKelas(new TambahKelasInterface(kelas), type, type, token);
+        TambahKelasInterface tambahKelasInterface = new TambahKelasInterface(kelas);
+        call = mApiService.addKelas(tambahKelasInterface, type, type, token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

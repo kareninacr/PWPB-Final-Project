@@ -48,6 +48,7 @@ public class DataSiswa extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_siswa);
+        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         initComponents();
     }
 
@@ -63,10 +64,6 @@ public class DataSiswa extends AppCompatActivity {
                     if (response.isSuccessful()) {
 
                         JSONObject jsonRESULTS = new JSONObject(response.body().string());
-                        Log.d("Array :", response.body().toString());
-                        TextView nisn = (TextView) findViewById(R.id.tvNis);
-                        TextView nama = (TextView) findViewById(R.id.tvNama);
-
                         ArrayList<Siswa> siswaArrayList = new ArrayList<>();
                         JSONArray dataArray = jsonRESULTS.getJSONArray("data");
 
@@ -104,7 +101,6 @@ public class DataSiswa extends AppCompatActivity {
         if (rvSiswa != null) {
             rvSiswa.setHasFixedSize(true);
         }
-        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         requestData();
 
         btnTambah = (Button) findViewById(R.id.btnTambah);

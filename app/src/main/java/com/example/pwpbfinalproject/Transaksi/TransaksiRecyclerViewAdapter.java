@@ -33,8 +33,8 @@ public class TransaksiRecyclerViewAdapter extends RecyclerView.Adapter<Transaksi
     public void onBindViewHolder(@NonNull TransaksiRecyclerViewAdapter.ViewHolder holder, int position) {
         Transaksi transaksi = listTransaksi.get(position);
         holder.tanggal.setText((String.valueOf(transaksi.getTanggal())));
-        holder.bayar.setText((String.valueOf(transaksi.getBayar())));
-        holder.siswa.setText((String.valueOf(transaksi.getSiswa())));
+        holder.jumlah.setText((String.valueOf(transaksi.getBayar())));
+        holder.nama.setText((String.valueOf(transaksi.getSiswa())));
     }
 
     @Override
@@ -47,12 +47,12 @@ public class TransaksiRecyclerViewAdapter extends RecyclerView.Adapter<Transaksi
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tanggal, bayar, siswa;
+        TextView tanggal, nama, jumlah;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tanggal = itemView.findViewById(R.id.tvTanggal);
-            bayar = itemView.findViewById(R.id.tvJumlah);
-            siswa = itemView.findViewById(R.id.tvSiswa);
+            nama = itemView.findViewById(R.id.tvNama);
+            jumlah = itemView.findViewById(R.id.tvKeterangan);
         }
     }
 }

@@ -14,6 +14,7 @@ import com.example.pwpbfinalproject.Admin.HomeAdmin;
 import com.example.pwpbfinalproject.LoginActivity;
 import com.example.pwpbfinalproject.R;
 import com.example.pwpbfinalproject.Retrofit.BaseApiService;
+import com.example.pwpbfinalproject.Retrofit.RetrofitClient;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -31,9 +32,8 @@ public class TambahTransaksi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_transaksi);
+        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         initComponents();
-        this.token = LoginActivity.token;
-        Log.d("Token", token);
     }
 
     private void initComponents() {
@@ -62,10 +62,6 @@ public class TambahTransaksi extends AppCompatActivity {
         final String bayar = etBayar.getText().toString();
         String type = "application/json";
         this.token = LoginActivity.token;
-        Log.d("Check", token);
-        Log.d("Type", type);
-        Log.d("Tanggal", tanggal);
-
         TambahTransaksiInterface tambahTransaksiInterface = new TambahTransaksiInterface(petugas, bulan, tanggal, keterangan, siswa, bayar);
         call = mApiService.addPembayaran(tambahTransaksiInterface,type, type, token);
         call.enqueue(new Callback<ResponseBody>() {

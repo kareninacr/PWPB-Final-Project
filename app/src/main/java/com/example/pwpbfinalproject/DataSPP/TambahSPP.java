@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.pwpbfinalproject.LoginActivity;
 import com.example.pwpbfinalproject.R;
 import com.example.pwpbfinalproject.Retrofit.BaseApiService;
+import com.example.pwpbfinalproject.Retrofit.RetrofitClient;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -30,6 +31,7 @@ public class TambahSPP extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_spp);
+        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         initComponents();
     }
 
@@ -50,8 +52,8 @@ public class TambahSPP extends AppCompatActivity {
         final String nominal = etNominal.getText().toString();
         String type = "application/json";
         this.token = LoginActivity.token;
-        Log.d("Token", token);
-        call = mApiService.addSPP(new TambahSPPInterface(tahun, nominal), type, type, token);
+        TambahSPPInterface tambahSPPInterface = new TambahSPPInterface(tahun, nominal);
+        call = mApiService.addSPP(tambahSPPInterface, type, type, token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
