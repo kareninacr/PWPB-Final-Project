@@ -32,7 +32,6 @@ public class TambahTransaksi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_transaksi);
-        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         initComponents();
     }
 
@@ -63,6 +62,8 @@ public class TambahTransaksi extends AppCompatActivity {
         String type = "application/json";
         this.token = LoginActivity.token;
         TambahTransaksiInterface tambahTransaksiInterface = new TambahTransaksiInterface(petugas, bulan, tanggal, keterangan, siswa, bayar);
+
+        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         call = mApiService.addPembayaran(tambahTransaksiInterface,type, type, token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
