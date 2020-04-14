@@ -23,7 +23,7 @@ import retrofit2.Response;
 public class TambahKelas extends AppCompatActivity {
     Call<ResponseBody> call;
     BaseApiService mApiService;
-    public static String token = null;
+    private String token = null;
     EditText etKelas, etKompetensi;
     Button btnSimpan, btnLihat;
 
@@ -51,7 +51,8 @@ public class TambahKelas extends AppCompatActivity {
         btnLihat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(TambahKelas.this, ShowKelas.class);
+                startActivity(intent);
             }
         });
     }
