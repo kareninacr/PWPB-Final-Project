@@ -31,7 +31,7 @@
                 android:layout_toRightOf="@id/back_data_kelas"
                 android:layout_marginTop="1dp"
                 android:layout_marginLeft="15dp"
-                android:text="@string/showdkls"
+                android:text="@string/showkls"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"

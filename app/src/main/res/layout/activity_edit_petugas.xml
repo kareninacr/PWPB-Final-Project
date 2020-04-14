@@ -34,22 +34,6 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/etNama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/edittext_shape"
-            android:hint="@string/nama"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title" />
-
-        <EditText
             android:id="@+id/etUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,7 +48,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etNama" />
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
         <EditText
             android:id="@+id/etPass"
@@ -84,6 +68,22 @@
             app:layout_constraintTop_toBottomOf="@id/etUser" />
 
         <EditText
+            android:id="@+id/etNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittext_shape"
+            android:hint="@string/nama"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etPass" />
+
+        <EditText
             android:id="@+id/etLvl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etPass" />
+            app:layout_constraintTop_toBottomOf="@id/etNama" />
 
         <Button
             android:id="@+id/btnSimpan"

@@ -13,9 +13,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pwpbfinalproject.Admin.AdminInput;
 import com.example.pwpbfinalproject.LoginActivity;
 import com.example.pwpbfinalproject.R;
 import com.example.pwpbfinalproject.Retrofit.BaseApiService;
@@ -38,7 +40,8 @@ public class DataSiswa extends AppCompatActivity {
     List<Siswa> listSiswa;
     LinearLayoutManager linearLayoutManager;
     SiswaRecyclerViewAdapter siswaRecyclerViewAdapter;
-    FloatingActionButton btnTambah;
+    Button btnTambah;
+    ImageButton back_data_siswa;
     public static String token = null;
 
     @Override
@@ -104,11 +107,20 @@ public class DataSiswa extends AppCompatActivity {
         mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         requestData();
 
-        btnTambah = (FloatingActionButton) findViewById(R.id.btnTambah);
+        btnTambah = (Button) findViewById(R.id.btnTambah);
         btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DataSiswa.this, TambahSiswa.class);
+                startActivity(intent);
+            }
+        });
+
+        back_data_siswa = (ImageButton) findViewById(R.id.back_data_siswa);
+        back_data_siswa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DataSiswa.this, AdminInput.class);
                 startActivity(intent);
             }
         });

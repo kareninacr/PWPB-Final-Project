@@ -21,7 +21,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TambahTransaksi extends AppCompatActivity {
-    EditText etTanggal, etSiswa, etKeterangan, etBulan, etBayar;
+    EditText etPetugas, etBulan, etTanggal, etKeterangan, etSiswa, etBayar;
     Call<ResponseBody> call;
     BaseApiService mApiService;
     private String token = null;
@@ -37,10 +37,11 @@ public class TambahTransaksi extends AppCompatActivity {
     }
 
     private void initComponents() {
+        etPetugas = (EditText) findViewById(R.id.etPetugas);
+        etBulan = (EditText) findViewById(R.id.etBulan);
         etTanggal = (EditText) findViewById(R.id.etTanggal);
         etKeterangan = (EditText) findViewById(R.id.etKeterangan);
         etSiswa = (EditText) findViewById(R.id.etSiswa);
-        etBulan = (EditText) findViewById(R.id.etBulan);
         etBayar = (EditText) findViewById(R.id.etBayar);
 
         btnSimpan = (Button) findViewById(R.id.btnSimpan);
@@ -53,10 +54,11 @@ public class TambahTransaksi extends AppCompatActivity {
     }
 
     private void tambahData() {
+        final String petugas = etPetugas.getText().toString();
+        final String bulan = etBulan.getText().toString();
         final String tanggal = etTanggal.getText().toString();
         final String keterangan = etKeterangan.getText().toString();
         final String siswa = etSiswa.getText().toString();
-        final String bulan = etBulan.getText().toString();
         final String bayar = etBayar.getText().toString();
         String type = "application/json";
         this.token = LoginActivity.token;
@@ -64,7 +66,7 @@ public class TambahTransaksi extends AppCompatActivity {
         Log.d("Type", type);
         Log.d("Tanggal", tanggal);
 
-        TambahTransaksiInterface tambahTransaksiInterface = new TambahTransaksiInterface(bulan, tanggal, keterangan, siswa, bayar);
+        TambahTransaksiInterface tambahTransaksiInterface = new TambahTransaksiInterface(petugas, bulan, tanggal, keterangan, siswa, bayar);
         call = mApiService.addPembayaran(tambahTransaksiInterface,type, type, token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override

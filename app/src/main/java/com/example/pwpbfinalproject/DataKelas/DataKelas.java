@@ -13,9 +13,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.pwpbfinalproject.Admin.AdminInput;
 import com.example.pwpbfinalproject.LoginActivity;
 import com.example.pwpbfinalproject.R;
 import com.example.pwpbfinalproject.Retrofit.BaseApiService;
@@ -40,6 +43,7 @@ public class DataKelas extends AppCompatActivity {
     KelasRecyclerViewAdapter kelasRecyclerViewAdapter;
     LinearLayoutManager linearLayoutManager;
     Button btnTambah;
+    ImageButton back_data_kelas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +113,15 @@ public class DataKelas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DataKelas.this, TambahKelas.class);
+                startActivity(intent);
+            }
+        });
+
+        back_data_kelas = (ImageButton) findViewById(R.id.back_data_kelas);
+        back_data_kelas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DataKelas.this, AdminInput.class);
                 startActivity(intent);
             }
         });

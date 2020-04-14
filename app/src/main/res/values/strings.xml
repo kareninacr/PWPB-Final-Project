@@ -44,8 +44,18 @@
     <string name="dssw">Data Siswa</string>
     <string name="dkls">Data Kelas</string>
     <string name="dspp">Data Spp</string>
-    <string name="detspp">Detail Data Spp</string>
     <string name="dtran">Data Transaksi</string>
+
+    <string name="showdsiswa">Detail Data Siswa</string>
+    <string name="showdpetugas">Detail Data Petugas</string>
+    <string name="showkls">Detail Data Kelas</string>
+    <string name="showspp">Detail Data Spp</string>
+
+    <string name="editkelas">Edit Data Kelas</string>
+    <string name="editPetugas">Edit Data Petugas</string>
+    <string name="editSiswa">Edit Data Siswa</string>
+    <string name="editspp">Edit Data Spp</string>
+
     <string name="ssw">Siswa</string>
     <string name="lssw">Lihat Siswa</string>
     <string name="spp">SPP</string>
@@ -61,14 +71,10 @@
     <string name="edt">Edit</string>
     <string name="hps">Hapus</string>
     <string name="lht">Lihat</string>
-    <string name="editkelas">Edit Data Kelas</string>
-    <string name="showdkls">Show Data Kelas</string>
     <string name="no">No</string>
     <string name="Nomor">Nomor</string>
-    <string name="editPetugas">Edit Data Petugas</string>
-    <string name="showdpetugas">Detail Data Petugas</string>
-    <string name="editSiswa">Edit Data Siswa</string>
-    <string name="showdsiswa">Detail Data Siswa</string>
+
+
 
 
 </resources>

@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +18,6 @@ import com.example.pwpbfinalproject.LoginActivity;
 import com.example.pwpbfinalproject.R;
 import com.example.pwpbfinalproject.Retrofit.BaseApiService;
 import com.example.pwpbfinalproject.Retrofit.RetrofitClient;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +40,8 @@ public class DataSPP extends AppCompatActivity {
     List<SPP> listSPP;
     SPPRecyclerViewAdapter sppRecyclerViewAdapter;
     LinearLayoutManager linearLayoutManager;
-    FloatingActionButton btnTambah;
+    Button btnTambah;
+    ImageButton back_data_spp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class DataSPP extends AppCompatActivity {
         initComponents();
     }
 
+    @SuppressLint("WrongViewCast")
     private void initComponents() {
         rvSPP = (RecyclerView) findViewById(R.id.rvSPP);
         linearLayoutManager = new LinearLayoutManager(this);
@@ -58,8 +61,17 @@ public class DataSPP extends AppCompatActivity {
         mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         requestData();
 
-        btnTambah = (FloatingActionButton) findViewById(R.id.btnTambah);
+        btnTambah = (Button) findViewById(R.id.btnTambah);
         btnTambah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DataSPP.this, TambahSPP.class);
+                startActivity(intent);
+            }
+        });
+
+        back_data_spp = (ImageButton) findViewById(R.id.back_data_spp);
+        back_data_spp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DataSPP.this, TambahSPP.class);
@@ -109,7 +121,7 @@ public class DataSPP extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(DataSPP.this, "Failed to laod data", Toast.LENGTH_LONG).show();
+                Toast.makeText(DataSPP.this, "Failed to load data", Toast.LENGTH_LONG).show();
             }
         });
     }

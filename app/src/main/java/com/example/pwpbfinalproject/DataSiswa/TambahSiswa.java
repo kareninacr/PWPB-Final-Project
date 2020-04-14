@@ -22,7 +22,7 @@ public class TambahSiswa extends AppCompatActivity {
     Call<ResponseBody> call;
     BaseApiService mApiService;
     public static String token = null;
-    EditText etNisn, etNis, etNama, etKelas, etAlamat, etTelp, etIdSpp;
+    EditText etNisn, etNis, etPass, etNama, etKelas, etAlamat, etTelp, etIdSpp;
     Button btnSimpan;
 
     @Override
@@ -35,6 +35,7 @@ public class TambahSiswa extends AppCompatActivity {
     private void initComponents() {
         etNisn = (EditText) findViewById(R.id.etNisn);
         etNis = (EditText) findViewById(R.id.etNis);
+        etPass = (EditText) findViewById(R.id.etPass);
         etNama = (EditText) findViewById(R.id.etNama);
         etKelas = (EditText) findViewById(R.id.etKelas);
         etAlamat = (EditText) findViewById(R.id.etAlamat);
@@ -53,6 +54,7 @@ public class TambahSiswa extends AppCompatActivity {
     private void tembahData() {
         final String nisn = etNisn.getText().toString();
         final String nis = etNis.getText().toString();
+        final String pass = etPass.getText().toString();
         final String nama = etNama.getText().toString();
         final String telp = etTelp.getText().toString();
         final String alamat = etAlamat.getText().toString();
@@ -60,11 +62,11 @@ public class TambahSiswa extends AppCompatActivity {
         String type = "application/json";
         this.token = LoginActivity.token;
 
-        call = mApiService.addSiswa(new TambahDataSiswaInterface(nis, nisn, nama, telp, alamat, spp), type, type, token);
+        call = mApiService.addSiswa(new TambahDataSiswaInterface(nis, nisn, pass, nama, telp, alamat, spp), type, type, token);
         call.enqueue(new Callback<ResponseBody>() {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(TambahSiswa.this, "Success to add Kelas", Toast.LENGTH_LONG);
+                    Toast.makeText(TambahSiswa.this, "Success to Add Siswa", Toast.LENGTH_LONG);
                     Intent intent = new Intent(TambahSiswa.this, DataSiswa.class);
                     startActivity(intent);
                 }
@@ -72,7 +74,7 @@ public class TambahSiswa extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(TambahSiswa.this, "Failed to Add Kelas", Toast.LENGTH_LONG);
+                Toast.makeText(TambahSiswa.this, "Failed to Add Siswa", Toast.LENGTH_LONG);
             }
         });
     }

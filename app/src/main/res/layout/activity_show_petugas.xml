@@ -42,42 +42,43 @@
     </Toolbar>
 
     <TextView
-        android:id="@+id/tvNama_show"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:text="Nama : Niana Lestari"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_show_kelas"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="35dp"/>
-
-    <TextView
         android:id="@+id/tvUser_show"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:text="Username : Petugas01904"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/tvNama_show"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_show_kelas"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="35dp"
         android:layout_marginBottom="15dp"/>
 
     <TextView
         android:id="@+id/tvPass_show"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="Password : petugas1904"
+        android:text="petugas1904"
         android:textColor="@color/black"
         android:textSize="18sp"
+        android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/tvUser_show"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/tvNama_show"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="Nama : Niana Lestari"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvPass_show"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"/>
 
     <TextView
         android:id="@+id/tvLvl_show"
@@ -86,7 +87,7 @@
         android:text="Level : Petugas"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/tvPass_show"
+        app:layout_constraintTop_toBottomOf="@id/tvNama_show"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="5dp"

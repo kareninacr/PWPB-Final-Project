@@ -67,13 +67,27 @@
         android:layout_marginBottom="15dp"/>
 
     <TextView
+        android:id="@+id/tvPass_show"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="annonymous"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/tvNIS_show"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
         android:id="@+id/tvNama_show"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:text="Nama : Annonymous"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/tvNIS_show"
+        app:layout_constraintTop_toBottomOf="@id/tvPass_show"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="5dp"
