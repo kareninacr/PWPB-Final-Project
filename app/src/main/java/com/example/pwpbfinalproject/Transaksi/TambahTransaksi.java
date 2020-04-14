@@ -16,6 +16,11 @@ import com.example.pwpbfinalproject.R;
 import com.example.pwpbfinalproject.Retrofit.BaseApiService;
 import com.example.pwpbfinalproject.Retrofit.RetrofitClient;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -68,9 +73,16 @@ public class TambahTransaksi extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.code()==200) {
-                    Intent intent = new Intent(TambahTransaksi.this, HomeAdmin.class);
-                    startActivity(intent);
-                    Toast.makeText(TambahTransaksi.this, "Success to add Transkaksi", Toast.LENGTH_LONG).show();
+                    try {
+                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                        Intent intent = new Intent(TambahTransaksi.this, HomeAdmin.class);
+                        startActivity(intent);
+                        Toast.makeText(TambahTransaksi.this, "Success to add Transkaksi", Toast.LENGTH_LONG).show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 
