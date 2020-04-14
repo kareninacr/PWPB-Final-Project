@@ -51,7 +51,8 @@ public class TambahKelas extends AppCompatActivity {
         btnLihat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(TambahKelas.this, ShowKelas.class);
+                startActivity(intent);
             }
         });
     }

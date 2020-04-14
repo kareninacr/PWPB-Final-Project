@@ -22,9 +22,9 @@ import retrofit2.Response;
 public class TambahSiswa extends AppCompatActivity {
     Call<ResponseBody> call;
     BaseApiService mApiService;
-    public static String token = null;
+    private String token = null;
     EditText etNisn, etNis, etPass, etNama, etKelas, etAlamat, etTelp, etIdSpp;
-    Button btnSimpan;
+    Button btnSimpan, btnLihat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +44,20 @@ public class TambahSiswa extends AppCompatActivity {
         etTelp = (EditText) findViewById(R.id.etTlp);
         etIdSpp = (EditText) findViewById(R.id.spp);
         btnSimpan = (Button) findViewById(R.id.btnSimpan);
+        btnLihat = (Button) findViewById(R.id.btnLihat);
 
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tembahData();
+            }
+        });
+
+        btnLihat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TambahSiswa.this, ShowSiswa.class);
+                startActivity(intent);
             }
         });
     }

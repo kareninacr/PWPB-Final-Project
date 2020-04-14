@@ -25,7 +25,7 @@ public class TambahSPP extends AppCompatActivity {
     Call<ResponseBody> call;
     BaseApiService mApiService;
     private String token = null;
-    Button btnSimpan;
+    Button btnSimpan, btnLihat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +39,20 @@ public class TambahSPP extends AppCompatActivity {
         etTahun = (EditText) findViewById(R.id.etTahun);
         etNominal = (EditText) findViewById(R.id.etNominal);
         btnSimpan = (Button) findViewById(R.id.btnSimpan);
+        btnLihat = (Button) findViewById(R.id.btnLihat);
+
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tambahData();
+            }
+        });
+
+        btnLihat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TambahSPP.this, ShowSPP.class);
+                startActivity(intent);
             }
         });
     }
