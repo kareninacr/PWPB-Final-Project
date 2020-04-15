@@ -77,9 +77,9 @@ public class TambahSiswa extends AppCompatActivity {
         call.enqueue(new Callback<ResponseBody>() {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(TambahSiswa.this, "Success to Add Siswa", Toast.LENGTH_LONG);
                     Intent intent = new Intent(TambahSiswa.this, DataSiswa.class);
                     startActivity(intent);
+                    Toast.makeText(TambahSiswa.this, "Success to Add Siswa", Toast.LENGTH_LONG);
                 }
             }
 

@@ -67,9 +67,9 @@ public class TambahKelas extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(TambahKelas.this, "Success to add Kelas", Toast.LENGTH_LONG);
                     Intent intent = new Intent(TambahKelas.this, DataKelas.class);
                     startActivity(intent);
+                    Toast.makeText(TambahKelas.this, "Success to add Kelas", Toast.LENGTH_LONG);
                 }
             }
 

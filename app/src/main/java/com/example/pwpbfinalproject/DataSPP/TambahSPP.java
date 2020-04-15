@@ -67,9 +67,9 @@ public class TambahSPP extends AppCompatActivity {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Toast.makeText(TambahSPP.this, "Success add SPP", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(TambahSPP.this, DataSPP.class);
                 startActivity(intent);
+                Toast.makeText(TambahSPP.this, "Success add SPP", Toast.LENGTH_LONG).show();
             }
 
             @Override
