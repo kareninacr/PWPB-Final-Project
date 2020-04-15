@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                         Success = jsonRESULTS.getString("token");
                         Toast.makeText(LoginActivity.this, "Login Success" ,Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, HomeAdmin.class);
-                        LoginActivity.token = this.Success;
+                        LoginActivity.token = "Bearer " + this.Success;
                         startActivity(intent);
                     }
                 } catch (JSONException e) {

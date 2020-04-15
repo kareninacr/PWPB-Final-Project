@@ -75,6 +75,7 @@ public class TambahTransaksi extends AppCompatActivity {
                 if (response.code()==200) {
                     try {
                         JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                        Log.d("Result", String.valueOf(jsonRESULTS));
                         Intent intent = new Intent(TambahTransaksi.this, HomeAdmin.class);
                         startActivity(intent);
                         Toast.makeText(TambahTransaksi.this, "Success to add Transkaksi", Toast.LENGTH_LONG).show();
