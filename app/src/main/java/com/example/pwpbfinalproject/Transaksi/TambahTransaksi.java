@@ -16,6 +16,11 @@ import com.example.pwpbfinalproject.R;
 import com.example.pwpbfinalproject.Retrofit.BaseApiService;
 import com.example.pwpbfinalproject.Retrofit.RetrofitClient;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,6 +37,7 @@ public class TambahTransaksi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_transaksi);
+        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         initComponents();
     }
 
@@ -62,15 +68,22 @@ public class TambahTransaksi extends AppCompatActivity {
         String type = "application/json";
         this.token = LoginActivity.token;
         TambahTransaksiInterface tambahTransaksiInterface = new TambahTransaksiInterface(petugas, bulan, tanggal, keterangan, siswa, bayar);
-
-        mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         call = mApiService.addPembayaran(tambahTransaksiInterface,type, type, token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Intent intent = new Intent(TambahTransaksi.this, HomeAdmin.class);
-                startActivity(intent);
-                Toast.makeText(TambahTransaksi.this, "Success to add Transkaksi", Toast.LENGTH_LONG).show();
+                if (response.code()==200) {
+                    try {
+                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                        Intent intent = new Intent(TambahTransaksi.this, HomeAdmin.class);
+                        startActivity(intent);
+                        Toast.makeText(TambahTransaksi.this, "Success to add Transkaksi", Toast.LENGTH_LONG).show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
 
             @Override
