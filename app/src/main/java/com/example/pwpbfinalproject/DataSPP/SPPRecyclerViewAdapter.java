@@ -32,7 +32,6 @@ public class SPPRecyclerViewAdapter extends RecyclerView.Adapter<SPPRecyclerView
     @Override
     public void onBindViewHolder(@NonNull SPPRecyclerViewAdapter.ViewHolder holder, int position) {
         SPP spp = listSPP.get(position);
-        holder.id.setText((String.valueOf(spp.getId())));
         holder.nominal.setText((String.valueOf(spp.getNominal())));
         holder.tahun.setText((String.valueOf(spp.getTahun())));
     }

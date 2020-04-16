@@ -30,6 +30,13 @@ public interface BaseApiService {
             @Header("Authorization") String token
     );
 
+    @GET("auth/users")
+    Call<ResponseBody> getPetugas(
+            @Header("Accept") String acc,
+            @Header("Content-Type") String content,
+            @Header("Authorization") String token
+    );
+
     //Tambah Data Siwa
     @POST("siswa")
     Call<ResponseBody> addSiswa(

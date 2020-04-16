@@ -24,7 +24,7 @@ public class HomeAdmin extends AppCompatActivity {
     CardView menuInput;
     Call<ResponseBody> call;
     BaseApiService mApiService;
-    public static String token = null;
+    public String token = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,6 @@ public class HomeAdmin extends AppCompatActivity {
         mApiService = RetrofitClient.getClient().create(BaseApiService.class);
         initComponents();
         this.token = LoginActivity.token;
-        Log.d("Token", token);
     }
 
     private void initComponents() {

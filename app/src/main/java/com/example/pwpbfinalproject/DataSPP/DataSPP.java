@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,7 +42,7 @@ public class DataSPP extends AppCompatActivity {
     SPPRecyclerViewAdapter sppRecyclerViewAdapter;
     LinearLayoutManager linearLayoutManager;
     Button btnTambah;
-    ImageButton back_data_spp;
+    ImageView back_data_spp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +71,7 @@ public class DataSPP extends AppCompatActivity {
             }
         });
 
-        back_data_spp = (ImageButton) findViewById(R.id.back_data_spp);
+        back_data_spp = (ImageView) findViewById(R.id.back_data_spp);
         back_data_spp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,7 +101,6 @@ public class DataSPP extends AppCompatActivity {
                             spp.setId(data.getString("id"));
                             spp.setNominal(data.getString("nominal"));
                             spp.setTahun(data.getString("tahun"));
-
                             Log.d("ID", data.getString("id"));
 
                             sppArrayList.add(spp);

@@ -76,6 +76,7 @@ public class DataTransaksi extends AppCompatActivity {
                             transaksi.setBayar(data.getString("jumlah_pembayaran"));
                             transaksi.setTanggal(data.getString("tgl_pembayaran"));
                             transaksi.setSiswa(data.getString("siswa_id"));
+                            transaksi.setKeterangan(data.getString("keterangan"));
 
                             Log.d("ID", data.getString("id"));
 

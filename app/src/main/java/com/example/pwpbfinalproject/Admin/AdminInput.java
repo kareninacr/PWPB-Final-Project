@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.example.pwpbfinalproject.DataKelas.DataKelas;
+import com.example.pwpbfinalproject.DataPetugas.DataPetugas;
 import com.example.pwpbfinalproject.DataSPP.DataSPP;
 import com.example.pwpbfinalproject.DataSiswa.DataSiswa;
 import com.example.pwpbfinalproject.R;
@@ -19,7 +20,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 
 public class AdminInput extends AppCompatActivity {
-    CardView menuSPP, menuKelas, menuSiswa;
+    CardView menuSPP, menuKelas, menuSiswa, menuPetugas;
     Call<ResponseBody> call;
     BaseApiService mApiService;
     public static String token = null;
@@ -36,6 +37,7 @@ public class AdminInput extends AppCompatActivity {
         menuSiswa = (CardView) findViewById(R.id.menuSiswa);
         menuKelas = (CardView) findViewById(R.id.menuKelas);
         menuSPP = (CardView) findViewById(R.id.menuSPP);
+        menuPetugas = (CardView) findViewById(R.id.menuPetugas);
 
         menuSiswa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +59,14 @@ public class AdminInput extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminInput.this, DataSPP.class);
+                startActivity(intent);
+            }
+        });
+
+        menuPetugas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminInput.this, DataPetugas.class);
                 startActivity(intent);
             }
         });

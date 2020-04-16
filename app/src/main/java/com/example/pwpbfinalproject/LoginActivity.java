@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
-                    if (response.code()==200) {
+                    if (response.isSuccessful()) {
                         JSONObject jsonRESULTS = new JSONObject(response.body().string());
                         Success = jsonRESULTS.getString("token");
                         Toast.makeText(LoginActivity.this, "Login Success" ,Toast.LENGTH_SHORT).show();

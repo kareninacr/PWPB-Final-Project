@@ -34,6 +34,7 @@ public class KelasRecyclerViewAdapter extends RecyclerView.Adapter<KelasRecycler
         Kelas kelas = listKelas.get(position);
         holder.no.setText((String.valueOf(kelas.getId())));
         holder.kelas.setText((String.valueOf(kelas.getNama())));
+        holder.kompetensi.setText((String.valueOf(kelas.getKompetensi())));
     }
 
     @Override
@@ -46,11 +47,12 @@ public class KelasRecyclerViewAdapter extends RecyclerView.Adapter<KelasRecycler
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView no, kelas;
+        TextView no, kelas,kompetensi;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             no = itemView.findViewById(R.id.tvNo);
             kelas = itemView.findViewById(R.id.tvKelas);
+            kompetensi = itemView.findViewById(R.id.tvKompetensi);
         }
     }
 }

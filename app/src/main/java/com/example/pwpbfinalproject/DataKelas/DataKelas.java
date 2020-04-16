@@ -73,6 +73,7 @@ public class DataKelas extends AppCompatActivity {
                             JSONObject data = dataArray.getJSONObject(i);
                             kelas.setId(data.getString("id"));
                             kelas.setNama(data.getString("nama_kelas"));
+                            kelas.setKompetensi(data.getString("kompetensi"));
 
                             Log.d("Nama Kelas", data.getString("nama_kelas"));
 

@@ -1,10 +1,13 @@
 package com.example.pwpbfinalproject.DataKelas;
 
 public class Kelas {
-    private String id, nama;
+    public Kelas(String id, String nama, String kompetensi) {
+        this.id = id;
+        this.nama = nama;
+        this.kompetensi = kompetensi;
+    }
 
     public Kelas() {
-
     }
 
     public String getId() {
@@ -23,8 +26,14 @@ public class Kelas {
         this.nama = nama;
     }
 
-    public Kelas(String id, String nama) {
-        this.id = id;
-        this.nama = nama;
+    public String getKompetensi() {
+        return kompetensi;
     }
+
+    public void setKompetensi(String kompetensi) {
+        this.kompetensi = kompetensi;
+    }
+
+    public String id, nama,kompetensi;
+
 }
